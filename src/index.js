@@ -39,7 +39,6 @@ var Accordion = React.createClass({
   getInitialState() {
     return {
       is_visible: false,
-      height: 0,
       content_height: 0
     };
   },
@@ -76,7 +75,7 @@ var Accordion = React.createClass({
       this.refs.AccordionContent.measure((ox, oy, width, height, px, py) => {
         // Sets content height in state
         this.setState({
-          height: this.props.expanded ? height : 0,
+          height: 0,
           content_height: height
         });
       });
@@ -108,12 +107,11 @@ var Accordion = React.createClass({
         </TouchableHighlight>
         <View
           ref="AccordionContentWrapper"
-          style={{
-            height: this.getTweeningValue('height')
-          }}
           onLayout={()=>{}}
+          style={{height: this.getTweeningValue('height')}}
         >
-          <View ref="AccordionContent" onLayout={()=>{}}>
+          <View ref="AccordionContent"
+            onLayout={()=>{}}>
             {this.props.content}
           </View>
         </View>
