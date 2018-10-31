@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/naoufal/react-native-accordion",
   "dependencies": {
-    "react-tween-state": "0.0.5",
-    "lodash": "^4.16.6"
+    "create-react-class": "^15.6.3",
+    "prop-types": "^15.6.2",
+    "react-tween-state": "0.0.5"
   }
 }
